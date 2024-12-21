@@ -16,9 +16,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './contact/contact.component';
-import { ContractComponent } from './contract/contract.component';
-import { AboutComponent } from './about/about.component';
 import { AddUserDialogComponent } from './user/user-dialog/user-dialog.component';
 import { UserTableComponent } from './user/user-table/user-table.component';
 import { HomeComponent } from './home/home.component';
@@ -27,9 +24,6 @@ import { UserStatusPipe } from './pipes/user-status.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent,
-    ContractComponent,
-    AboutComponent,
     AddUserDialogComponent,
     UserTableComponent,
     HomeComponent,

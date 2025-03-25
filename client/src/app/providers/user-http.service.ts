@@ -25,7 +25,6 @@ export class UserHttpService {
 
   updateUser(user: User): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/users/${user.user_id}`, user);
-    // match the path to the object in the backend
   }
 
   deleteUser(userId: number): Observable<any> {

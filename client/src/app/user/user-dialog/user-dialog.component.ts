@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/app/models/user';
 import { UserHttpService } from '@app/providers/user-http.service';
@@ -9,11 +9,11 @@ import { UserHttpService } from '@app/providers/user-http.service';
   templateUrl: './user-dialog.component.html',
 })
 export class AddUserDialogComponent implements OnInit {
-  userForm!: FormGroup;
+  userForm!: UntypedFormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<AddUserDialogComponent>,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     @Inject(MAT_DIALOG_DATA) public existingUser: User | null
   ) {}
 

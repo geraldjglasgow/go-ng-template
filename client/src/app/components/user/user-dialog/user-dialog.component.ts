@@ -18,11 +18,11 @@ export class AddUserDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
-      user_name: [this.existingUser?.user_name || '', Validators.required],
+      user_name: [this.existingUser?.username || '', Validators.required],
       first_name: [this.existingUser?.first_name || '', [Validators.required, Validators.minLength(2)]],
       last_name: [this.existingUser?.last_name || '', Validators.required],
       email: [this.existingUser?.email || '', [Validators.required, Validators.email]],
-      user_status: [this.existingUser?.user_status || 'A', Validators.required],
+      user_status: [this.existingUser?.status || 'A', Validators.required],
       department: [this.existingUser?.department || '', Validators.required],
     });
   }

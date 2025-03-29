@@ -56,7 +56,7 @@ func UpdateUser(c echo.Context) error {
 			models.Users[i].FirstName = updatedUser.FirstName
 			models.Users[i].LastName = updatedUser.LastName
 			models.Users[i].Email = updatedUser.Email
-			models.Users[i].UserStatus = updatedUser.UserStatus
+			models.Users[i].Status = updatedUser.Status
 			models.Users[i].Department = updatedUser.Department
 			return c.JSON(http.StatusOK, models.Users[i])
 		}

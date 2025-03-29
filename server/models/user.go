@@ -1,21 +1,21 @@
 package models
 
-type UserStatus string
+type Status string
 
 const (
-	Inactive   UserStatus = "I"
-	Active     UserStatus = "A"
-	Terminated UserStatus = "T"
+	Inactive   Status = "I"
+	Active     Status = "A"
+	Terminated Status = "T"
 )
 
 type User struct {
-	UserID     int64      `json:"user_id"`
-	UserName   string     `json:"user_name"`
-	FirstName  string     `json:"first_name"`
-	LastName   string     `json:"last_name"`
-	Email      string     `json:"email"`
-	UserStatus UserStatus `json:"user_status"`
-	Department string     `json:"department"`
+	UserID     int64  `json:"id"`
+	UserName   string `json:"username"`
+	FirstName  string `json:"first_name"`
+	LastName   string `json:"last_name"`
+	Email      string `json:"email"`
+	Status     Status `json:"status"`
+	Department string `json:"department"`
 }
 
 var Users = []User{
@@ -25,7 +25,7 @@ var Users = []User{
 		FirstName:  "Alice",
 		LastName:   "Johnson",
 		Email:      "alice@example.com",
-		UserStatus: Active,
+		Status:     Active,
 		Department: "Engineering",
 	},
 	{
@@ -34,7 +34,7 @@ var Users = []User{
 		FirstName:  "Bob",
 		LastName:   "Smith",
 		Email:      "bob@example.com",
-		UserStatus: Inactive,
+		Status:     Inactive,
 		Department: "Marketing",
 	},
 }

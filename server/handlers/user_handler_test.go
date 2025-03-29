@@ -27,7 +27,7 @@ var _ = Describe("UserHandler", func() {
 				FirstName:  "Alice",
 				LastName:   "Johnson",
 				Email:      "alice@example.com",
-				UserStatus: models.Active,
+				Status:     models.Active,
 				Department: "Engineering",
 			},
 		}
@@ -40,7 +40,7 @@ var _ = Describe("UserHandler", func() {
 				FirstName:  "Bob",
 				LastName:   "Smith",
 				Email:      "bob@example.com",
-				UserStatus: models.Inactive,
+				Status:     models.Inactive,
 				Department: "Marketing",
 			}
 			body, _ := json.Marshal(newUser)

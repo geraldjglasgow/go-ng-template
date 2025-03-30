@@ -1,2 +1,66 @@
+<h2 mat-dialog-title>{{ existingUser ? 'Edit User' : 'Add User' }}</h2>
 
-<h2 mat-dialog-title>{{ true ? 'Edit User' : 'Add User' }}</h2>
+<mat-dialog-content>
+  <form [formGroup]="userForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="user_name" />
+      <mat-error *ngIf="userForm.get('user_name')?.hasError('required')">
+        Username is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="first_name" />
+      <mat-error *ngIf="userForm.get('first_name')?.hasError('required')">
+        First name is required.
+      </mat-error>
+      <mat-error *ngIf="userForm.get('first_name')?.hasError('minlength')">
+        First name must be at least 2 characters.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="last_name" />
+      <mat-error *ngIf="userForm.get('last_name')?.hasError('required')">
+        Last name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+      <mat-error *ngIf="userForm.get('email')?.hasError('required')">
+        Email is required.
+      </mat-error>
+      <mat-error *ngIf="userForm.get('email')?.hasError('email')">
+        Enter a valid email.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="user_status">
+        <mat-option value="A">Active</mat-option>
+        <mat-option value="I">Inactive</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Department</mat-label>
+      <input matInput formControlName="department" />
+      <mat-error *ngIf="userForm.get('department')?.hasError('required')">
+        Department is required.
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" [disabled]="userForm.invalid" (click)="onSubmit()">
+    Save
+  </button>
+</mat-dialog-actions>

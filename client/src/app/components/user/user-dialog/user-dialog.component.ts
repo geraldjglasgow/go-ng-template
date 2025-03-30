@@ -7,11 +7,11 @@ import { User } from 'src/app/models/user';
   selector: 'app-user-dialog',
   templateUrl: './user-dialog.component.html',
 })
-export class AddUserDialogComponent implements OnInit {
+export class UserDialogComponent implements OnInit {
   userForm!: UntypedFormGroup;
 
   constructor(
-    public dialogRef: MatDialogRef<AddUserDialogComponent>,
+    public dialogRef: MatDialogRef<UserDialogComponent>,
     private fb: UntypedFormBuilder,
     @Inject(MAT_DIALOG_DATA) public existingUser: User | null
   ) {}

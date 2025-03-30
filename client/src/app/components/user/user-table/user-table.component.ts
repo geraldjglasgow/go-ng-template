@@ -1,11 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { User } from '../../../models/user';
-import { UserHttpService } from '../../../providers/user-http.service';
-import { BaseComponent } from '../../../base.component';
+import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { UserHttpService } from 'src/app/providers/user-http.service';
+import { BaseComponent } from 'src/app/base.component';
 import { ErrorUtils } from 'src/app/utils/error-utils';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { AddUserDialogComponent } from '../user-dialog/user-dialog.component';
+import { UserDialogComponent } from 'src/app/components/user/user-dialog/user-dialog.component';
 
 @Component({
   selector: 'app-user-table',
@@ -31,7 +31,7 @@ export class UserTableComponent extends BaseComponent implements OnInit {
   }
 
   openDialog(user: User | null): void {
-    this.dialog.open(AddUserDialogComponent, {
+    this.dialog.open(UserDialogComponent, {
       data: user,
     });
   }
